@@ -5,6 +5,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      palatino: ["Palatino", "sans-serif"],
+    },
     extend: {
       colors: {
         'cream': '#FAEED1'
