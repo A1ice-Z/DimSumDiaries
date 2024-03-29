@@ -8,7 +8,11 @@ export default {
     fontFamily: {
       palatino: ["Palatino", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      colors: {
+        'cream': '#FAEED1'
+      },
+    },
   },
   plugins: [],
 }
