@@ -10,8 +10,8 @@ interface FoodCardProps {
 const FoodCard = ({ imageSrc, altText, caption }: FoodCardProps) => {
     const [isHovered, setIsHovered] = useState<boolean>(false);
     const [isClicked, setIsClicked] = useState<boolean>(false);
-    
-    
+
+
     return (
         <div className="w-[150px] h-[150px] rounded-2xl overflow-hidden shadow-lg my-2"
             onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
