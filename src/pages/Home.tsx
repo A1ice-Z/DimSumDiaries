@@ -4,7 +4,7 @@ import { PiBowlFoodFill } from "react-icons/pi";
 import { FiHeart } from "react-icons/fi";
 import { LuCalendarHeart } from "react-icons/lu";
 import FoodCard from "../components/FoodCard";
-import recipes from "../data/recipes"
+import recipes from "../data/recipes";
 import foodCardType from "../types/types";
 
 const Home = () => {
@@ -43,9 +43,7 @@ const Home = () => {
                                 <FiHeart className="h-full items-end" />
                             </div>
                         </div>
-                        <div>
-
-                        </div>
+                        <div></div>
                     </div>
                     <div className="py-[15px]">
                         <div className="flex gap-2">
@@ -54,9 +52,7 @@ const Home = () => {
                                 <LuCalendarHeart className="h-full items-end" />
                             </div>
                         </div>
-                        <div>
-
-                        </div>
+                        <div></div>
                     </div>
                     <div className="py-[15px]">
                         <div className="flex gap-2">
@@ -66,15 +62,13 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="flex items-start justify-start gap-6">
-                            {
-                                recipes.map((card: foodCardType) => (
-                                    <FoodCard {...card} />
-                                ))
-                            }
+                            {recipes.map((card: foodCardType) => (
+                                <FoodCard {...card} />
+                            ))}
                         </div>
                     </div>
                 </div>
-            </main >
+            </main>
             <Footer />
         </>
     );
