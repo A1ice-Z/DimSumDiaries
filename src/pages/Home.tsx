@@ -7,9 +7,26 @@ const Home = () => {
         <>
             <Navbar />
             <main className="h-[650px] w-full font-palatino">
-                <div className="h-full items-center flex w-full justify-center">
-                    <p className="text-[58px] underline"></p>
-                    <FoodCard imageSrc={"https://redhousespice.com/wp-content/uploads/2020/06/Jian-Bing-Chinese-crepe-10-1367x2048.jpg"} altText={"Good Food"} caption={"Jian Bing - 煎饼"}            />
+                <div className="bg-cream w-full h-[280px]">
+                    <div className="text-[40px] px-[4%] h-full flex items-end justify-center gap-[200px]">
+                        <div>
+                            <p>Welcome!</p>
+                            <p>Velkommen!</p>
+                            <p>欢迎！</p>
+                        </div>
+                        <div className="flex">
+                            <img
+                                className="pt-10 relative left-20 z-30"
+                                src="/Orange.svg"
+                                alt="Orange cat"
+                            />
+                            <img
+                                className="z-40"
+                                src="/Black.svg"
+                                alt="Orange cat"
+                            />
+                        </div>
+                    </div>
                 </div>
             </main>
             <Footer />
