@@ -4,7 +4,7 @@ import { PiBowlFoodFill } from "react-icons/pi";
 import { FiHeart } from "react-icons/fi";
 import { LuCalendarHeart } from "react-icons/lu";
 import FoodCard from "../components/FoodCard";
-import recipes from "../data/recipes";
+import recipes from "../data/recipes"
 import foodCardType from "../types/types";
 
 const Home = () => {
@@ -68,7 +68,46 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-            </main>
+                <div className="py-[20px] px-[5%] font-palatino text-[30px]">
+                    <div className="py-[15px]">
+                        <div className="flex gap-2">
+                            <p>My Favorites</p>
+                            <div>
+                                <FiHeart className="h-full items-end" />
+                            </div>
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                    <div className="py-[15px]">
+                        <div className="flex gap-2">
+                            <p>This Weeks Recepies</p>
+                            <div>
+                                <LuCalendarHeart className="h-full items-end" />
+                            </div>
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                    <div className="py-[15px]">
+                        <div className="flex gap-2">
+                            <p>All recepies</p>
+                            <div>
+                                <PiBowlFoodFill className="h-full items-end" />
+                            </div>
+                        </div>
+                        <div className="flex items-start justify-center gap-6">
+                            {
+                                recipes.map((card: foodCardType) => (
+                                    <FoodCard {...card} />
+                                ))
+                            }
+                        </div>
+                    </div>
+                </div>
+            </main >
             <Footer />
         </>
     );
