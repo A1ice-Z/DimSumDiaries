@@ -22,13 +22,13 @@ const Home = () => {
                         <div className="flex">
                             <img
                                 className="pt-10 relative left-20 z-30"
-                                src="/Orange.svg"
+                                src="/orangecat.svg"
                                 alt="Orange cat"
                             />
                             <img
                                 className="z-40"
-                                src="/Black.svg"
-                                alt="Orange cat"
+                                src="/blackcat.svg"
+                                alt="Black cat"
                             />
                         </div>
                     </div>
