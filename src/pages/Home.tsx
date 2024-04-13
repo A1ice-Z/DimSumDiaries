@@ -4,7 +4,8 @@ import { PiBowlFoodFill } from "react-icons/pi";
 import { FiHeart } from "react-icons/fi";
 import { LuCalendarHeart } from "react-icons/lu";
 import FoodCard from "../components/FoodCard";
-import { FiSearch } from "react-icons/fi";
+import recipes from "../data/recipes";
+import foodCardType from "../types/types";
 
 const Home = () => {
     return (
