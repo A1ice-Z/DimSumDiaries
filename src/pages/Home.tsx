@@ -12,15 +12,15 @@ const Home = () => {
         <>
             <Navbar />
             <main className="h-fit w-full font-palatino">
-                <div className="bg-cream w-full h-[330px] flex items-center">
+                <div className="bg-cream h-[330px] flex items-center">
                     <div className="bg-cream-light py-[10px] w-full h-[270px]">
-                        <div className="text-[40px] px-[4%] h-full flex items-end justify-center gap-[50%]">
+                        <div className="text-[40px] h-full w-full flex items-end justify-start px-[5%] gap-[52%]">
                             <div>
                                 <p>Welcome!</p>
                                 <p>Velkommen!</p>
                                 <p>欢迎！</p>
                             </div>
-                            <div className="flex">
+                            <div className="flex w-full items-end justify-end">
                                 <img
                                     className="pt-10 relative left-20 z-30"
                                     src="/orangecat.svg"
@@ -65,7 +65,7 @@ const Home = () => {
                                 <PiBowlFoodFill className="h-full items-end" />
                             </div>
                         </div>
-                        <div className="flex items-start justify-center gap-6">
+                        <div className="flex items-start justify-start gap-6">
                             {
                                 recipes.map((card: foodCardType) => (
                                     <FoodCard {...card} />
