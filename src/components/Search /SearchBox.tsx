@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
 import Field from "../Field/Field";
 import SearchResult from "./SearchResult";
+import useOnclickOutside from "react-cool-onclickoutside";
 
-interface SearchBoxProps {
-    closeFunc: Function;
-}
-
-const SearchBox = ({ closeFunc }: SearchBoxProps) => {
+const SearchBox = () => {
     const [fieldValue, setFieldValue] = useState<string>("");
     const [results, setResults] = useState<Array<string>>([""]);
 
@@ -31,11 +28,10 @@ const SearchBox = ({ closeFunc }: SearchBoxProps) => {
                     {fieldValue.length > 0 && (
                         <div className="flex flex-row justify-center">
                             <div className="flex flex-col gap-y-[40px] mt-2 max-h-[400px] overflow-y-scroll">
-                                {results.map((series) => (
+                                {results.map((res) => (
                                     <SearchResult
-                                        closeFunc={closeFunc}
-                                        key={series}
-                                        recipeName={series}
+                                        key={res}
+                                        recipeName={res}
                                         imageSrc={""}
                                     />
                                 ))}

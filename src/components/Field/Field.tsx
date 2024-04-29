@@ -30,7 +30,7 @@ const Field = ({
             <FiSearch className="text-[38px]" />
             {label && <label>{label}</label>}
             <input
-                className="bg-white w-full h-[40px] outline-none border-none border-transparent"
+                className="bg-white w-full h-[40px] outline-none border-none border-transparent font-palatino"
                 type="text"
                 value={value}
                 onChange={handleChange}
