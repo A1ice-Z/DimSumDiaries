@@ -12,12 +12,12 @@ const FoodCard = ({ imageSrc, altText, caption }: FoodCardProps) => {
     const [isClicked, setIsClicked] = useState<boolean>(false);
     return (
         <div
-            className="w-[150px] h-[150px] rounded-2xl overflow-hidden shadow-lg my-2"
+            className="w-[150px] h-[150px] rounded-2xl overflow-hidden shadow-lg my-2 group"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
             <img
-                className="object-cover w-full h-[105px]"
+                className="object-cover w-full h-[105px] transition-transform transform group-hover:scale-105 ease-in"
                 src={imageSrc}
                 alt={altText}
             />
