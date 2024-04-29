@@ -5,6 +5,7 @@ interface FieldProps {
     label?: string;
     placeholder?: string;
     value: string;
+    focus?: boolean;
     setValue: (value: string) => void;
     onChange?: (value: string) => void;
 }
@@ -13,6 +14,7 @@ const Field = ({
     label,
     placeholder,
     value,
+    focus = false,
     setValue,
     onChange,
 }: FieldProps) => {
@@ -35,6 +37,7 @@ const Field = ({
                 value={value}
                 onChange={handleChange}
                 placeholder={placeholder}
+                autoFocus={focus}
             />
         </div>
     );

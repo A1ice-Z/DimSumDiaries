@@ -1,16 +1,23 @@
 import { useEffect, useState } from "react";
 import Field from "../Field/Field";
 import SearchResult from "./SearchResult";
-import useOnclickOutside from "react-cool-onclickoutside";
+import recipes from "../../data/recipes";
+import foodCardType from "../../types/types";
 
 const SearchBox = () => {
     const [fieldValue, setFieldValue] = useState<string>("");
-    const [results, setResults] = useState<Array<string>>([""]);
+    const [results, setResults] = useState<foodCardType[]>([]);
 
     useEffect(() => {
         if (fieldValue.length <= 0) {
             return;
         }
+
+        setResults(
+            recipes.filter((food) =>
+                food.caption.toLowerCase().includes(fieldValue.toLowerCase())
+            )
+        );
     }, [fieldValue]);
 
     return (
@@ -21,6 +28,7 @@ const SearchBox = () => {
                         placeholder="Search for a recipe..."
                         value={fieldValue}
                         setValue={setFieldValue}
+                        focus
                     />
                     <div className="flex flex-row justify-center py-2">
                         <div className="w-[94%] h-[2px] bg-gray-default "></div>
@@ -28,11 +36,11 @@ const SearchBox = () => {
                     {fieldValue.length > 0 && (
                         <div className="flex flex-row justify-center">
                             <div className="flex flex-col gap-y-[40px] mt-2 max-h-[400px] overflow-y-scroll">
-                                {results.map((res) => (
+                                {results.map((res: foodCardType) => (
                                     <SearchResult
-                                        key={res}
-                                        recipeName={res}
-                                        imageSrc={""}
+                                        key={res.altText}
+                                        recipeName={res.caption}
+                                        imageSrc={res.imageSrc}
                                     />
                                 ))}
                             </div>
