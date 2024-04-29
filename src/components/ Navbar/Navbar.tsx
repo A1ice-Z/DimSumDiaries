@@ -2,20 +2,33 @@ import { Link } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import { useState } from "react";
 import SearchBox from "../Search /SearchBox";
+import useOnclickOutside from "react-cool-onclickoutside";
 
 const Navbar = () => {
     const [visibleSearch, setVisibleSearch] = useState<boolean>(false);
+    const ref = useOnclickOutside(() => {
+        setScrollLock("visible");
+        setVisibleSearch(false);
+    });
+
+    const setScrollLock = (overflow: "hidden" | "visible") => {
+        document.body.style.overflow = overflow;
+    };
+
+    const onClickSearch = () => {
+        setScrollLock("hidden");
+        setVisibleSearch(true);
+    };
 
     return (
         <>
             {visibleSearch && (
                 <div>
-                    <div
-                        onClick={() => setVisibleSearch(false)}
-                        className="absolute z-50 w-full h-full bg-black bg-opacity-50 overflow-hidden"
-                    ></div>
+                    <div className="absolute z-50 w-full h-[100vh] bg-black bg-opacity-50 overscroll-contain"></div>
                     <div className="flex justify-center top-[20%] w-full absolute z-50">
-                        <SearchBox closeFunc={setVisibleSearch} />
+                        <div ref={ref}>
+                            <SearchBox />
+                        </div>
                     </div>
                 </div>
             )}
@@ -37,7 +50,7 @@ const Navbar = () => {
                 </div>
                 <div>
                     <FiSearch
-                        onClick={() => setVisibleSearch(true)}
+                        onClick={() => onClickSearch()}
                         className="text-black text-[38px] h-full items-center cursor-pointer"
                     />
                 </div>
