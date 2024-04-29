@@ -25,11 +25,13 @@ const Home = () => {
                                     className="pt-10 relative left-20 z-30"
                                     src="/orangecat.svg"
                                     alt="Orange cat"
+                                    draggable={false}
                                 />
                                 <img
                                     className="z-40"
                                     src="/blackcat.svg"
                                     alt="Black cat"
+                                    draggable={false}
                                 />
                             </div>
                         </div>
