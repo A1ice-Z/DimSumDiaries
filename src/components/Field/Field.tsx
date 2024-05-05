@@ -7,7 +7,6 @@ interface FieldProps {
     value: string;
     focus?: boolean;
     setValue: (value: string) => void;
-    onChange?: (value: string) => void;
 }
 
 const Field = ({
@@ -16,15 +15,10 @@ const Field = ({
     value,
     focus = false,
     setValue,
-    onChange,
 }: FieldProps) => {
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newValue = event.target.value;
         setValue(newValue);
-
-        if (onChange) {
-            onChange(newValue);
-        }
     };
 
     return (
