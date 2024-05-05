@@ -1,4 +1,6 @@
-const recipes = [
+import foodCardType from "../types/types";
+
+const recipes: foodCardType[] = [
     {
         imageSrc: "https://redhousespice.com/wp-content/uploads/2020/06/Jian-Bing-Chinese-Crepes-4-360x360.jpg",
         altText: "Jian Bing",
