@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import { useState } from "react";
-import SearchBox from "../Search /SearchBox";
+import SearchBox from "../Search/SearchBox";
 import useOnclickOutside from "react-cool-onclickoutside";
 
 const Navbar = () => {
