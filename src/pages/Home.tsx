@@ -3,9 +3,8 @@ import Footer from "../components/Footer/Footer";
 import { PiBowlFoodFill } from "react-icons/pi";
 import { FiHeart } from "react-icons/fi";
 import { LuCalendarHeart } from "react-icons/lu";
-import FoodCard from "../components/FoodCard";
 import recipes from "../data/recipes"
-import foodCardType from "../types/types";
+import FoodCardList from "../components/FoodCards/FoodCardList";
 
 const Home = () => {
     return (
@@ -43,6 +42,7 @@ const Home = () => {
                                 <FiHeart className="h-full items-end" />
                             </div>
                         </div>
+
                         <div>
 
                         </div>
@@ -65,13 +65,7 @@ const Home = () => {
                                 <PiBowlFoodFill className="h-full items-end" />
                             </div>
                         </div>
-                        <div className="flex items-start justify-start gap-6">
-                            {
-                                recipes.map((card: foodCardType) => (
-                                    <FoodCard {...card} />
-                                ))
-                            }
-                        </div>
+                        <FoodCardList recipes={recipes} />
                     </div>
                 </div>
             </main >
