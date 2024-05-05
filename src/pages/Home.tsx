@@ -3,11 +3,28 @@ import Footer from "../components/Footer/Footer";
 import { PiBowlFoodFill } from "react-icons/pi";
 import { FiHeart } from "react-icons/fi";
 import { LuCalendarHeart } from "react-icons/lu";
-import FoodCard from "../components/FoodCard";
+import FoodCard from "../components/FoodCards/FoodCard";
 import recipes from "../data/recipes";
 import foodCardType from "../types/types";
+import FoodCardList from "../components/FoodCards/FoodCardList";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+    const [favorites, setFavorites] = useState<String[]>([]);
+    
+    useEffect(() => {
+        const currentFavorites = sessionStorage.getItem("favorites")
+
+        if (currentFavorites == "") {
+            sessionStorage.setItem("favorites", JSON.stringify(favorites));
+        }
+        else {
+            setFavorites(JSON.parse(currentFavorites || "[]"));
+        }
+
+    }, [])
+
+
     return (
         <>
             <Navbar />
@@ -45,7 +62,10 @@ const Home = () => {
                                 <FiHeart className="h-full items-end" />
                             </div>
                         </div>
-                        <div></div>
+
+                        <div>
+                            <FoodCardList recipes={recipes.filter((recipe) => favorites.includes(recipe.id))} />
+                        </div>
                     </div>
                     <div className="py-[15px]">
                         <div className="flex gap-2">

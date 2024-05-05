@@ -16,7 +16,7 @@ const FoodCard = ({ id, imageSrc, altText, caption }: FoodCardProps) => {
 
     useEffect(() => {
         const currentFavorites = sessionStorage.getItem("favorites");
-        console.log(favorites, "From session storage")
+
         if (currentFavorites == "") {
             sessionStorage.setItem("favorites", JSON.stringify(favorites));
         }
