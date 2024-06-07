@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Field from "../Field/Field";
 import SearchResult from "./SearchResult";
 import recipes from "../../data/recipes";
-import foodCardType from "../../types/types";
+import foodCardType from "../../types/FoodCardTypes";
 
 const SearchBox = () => {
     const [fieldValue, setFieldValue] = useState<string>("");

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import foodCardType from "../../types/types";
+import foodCardType from "../../types/FoodCardTypes";
 import { FiHeart } from "react-icons/fi";
 
 interface FoodCardProps {

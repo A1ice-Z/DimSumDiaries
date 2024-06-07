@@ -1,4 +1,4 @@
-import foodCardType from "../types/types";
+import foodCardType from "../types/FoodCardTypes";
 
 const recipes: foodCardType[] = [
     {
