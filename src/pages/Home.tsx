@@ -1,4 +1,4 @@
-import Navbar from "../components/ Navbar/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import { PiBowlFoodFill } from "react-icons/pi";
 import { FiHeart } from "react-icons/fi";
@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 
 const Home = () => {
     const [favorites, setFavorites] = useState<String[]>([]);
-    
+
     useEffect(() => {
         const currentFavorites = sessionStorage.getItem("favorites")
 
