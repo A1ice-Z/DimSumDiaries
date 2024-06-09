@@ -3,7 +3,7 @@ import Footer from "../components/Footer/Footer";
 import { PiBowlFoodFill } from "react-icons/pi";
 import { FiHeart } from "react-icons/fi";
 import { LuCalendarHeart } from "react-icons/lu";
-import recipes from "../data/FoodCards"
+import recipes from "../data/FoodCards";
 import FoodCardList from "../components/FoodCards/FoodCardList";
 import { useEffect, useState } from "react";
 
@@ -11,17 +11,14 @@ const Home = () => {
     const [favorites, setFavorites] = useState<String[]>([]);
 
     useEffect(() => {
-        const currentFavorites = sessionStorage.getItem("favorites")
+        const currentFavorites = sessionStorage.getItem("favorites");
 
         if (currentFavorites == "") {
             sessionStorage.setItem("favorites", JSON.stringify(favorites));
-        }
-        else {
+        } else {
             setFavorites(JSON.parse(currentFavorites || "[]"));
         }
-
-    }, [])
-
+    }, []);
 
     return (
         <>
@@ -35,17 +32,11 @@ const Home = () => {
                                 <p>Velkommen!</p>
                                 <p>欢迎！</p>
                             </div>
-                            <div className="flex w-full items-end justify-end">
+                            <div className="flex h-[250px] w-full items-end justify-end relative">
                                 <img
-                                    className="pt-10 relative left-20 z-30"
-                                    src="/orangecat.svg"
-                                    alt="Orange cat"
-                                    draggable={false}
-                                />
-                                <img
-                                    className="z-40"
-                                    src="/blackcat.svg"
-                                    alt="Black cat"
+                                    className="absolute inset-0 w-full h-full rounded-lg"
+                                    src="/kitties.svg"
+                                    alt="cats"
                                     draggable={false}
                                 />
                             </div>
@@ -62,7 +53,11 @@ const Home = () => {
                         </div>
 
                         <div>
-                            <FoodCardList recipes={recipes.filter((recipe) => favorites.includes(recipe.id))} />
+                            <FoodCardList
+                                recipes={recipes.filter((recipe) =>
+                                    favorites.includes(recipe.id)
+                                )}
+                            />
                         </div>
                     </div>
                     <div className="py-[15px]">
@@ -84,7 +79,7 @@ const Home = () => {
                         <FoodCardList recipes={recipes} />
                     </div>
                 </div>
-            </main >
+            </main>
             <Footer />
         </>
     );
