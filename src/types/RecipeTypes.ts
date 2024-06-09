@@ -1,7 +1,10 @@
 export type RecipeType = {
-    ingredients: IngredientsType,
-    directions: DirectionType,
-    time: number
+    id: string,
+    ingredients: IngredientsType[],
+    directions: DirectionType[],
+    time: number,
+    image: string,
+    title: string
 }
 
 export type IngredientsType = {
@@ -16,7 +19,7 @@ export type IngredientType = {
 }
 
 type MeasureType = {
-    measure: "ml" | "l" | "dl" | "l" | "g" | "kg"
+    measure: "ml" | "l" | "dl" | "l" | "g" | "kg" | "tbs" | "ts" | ""
 }
 
 export type DirectionType = {

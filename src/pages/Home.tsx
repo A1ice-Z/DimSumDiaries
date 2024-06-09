@@ -3,7 +3,7 @@ import Footer from "../components/Footer/Footer";
 import { PiBowlFoodFill } from "react-icons/pi";
 import { FiHeart } from "react-icons/fi";
 import { LuCalendarHeart } from "react-icons/lu";
-import recipes from "../data/recipes"
+import recipes from "../data/FoodCards"
 import FoodCardList from "../components/FoodCards/FoodCardList";
 import { useEffect, useState } from "react";
 

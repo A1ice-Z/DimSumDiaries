@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Field from "../Field/Field";
 import SearchResult from "./SearchResult";
-import recipes from "../../data/recipes";
+import recipes from "../../data/FoodCards";
 import foodCardType from "../../types/FoodCardTypes";
 
 const SearchBox = () => {
