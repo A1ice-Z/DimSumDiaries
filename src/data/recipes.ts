@@ -82,8 +82,8 @@ const Recipes: RecipeType[] = [
             ]
         }],
         time: 30,
-        image: "https://redhousespice.com/wp-content/uploads/2020/06/Jian-Bing-Chinese-Crepes-4-360x360.jpg",
-        title: "JIAN BING, CHINESE CREPES (煎饼)"
+        image: "https://redhousespice.com/wp-content/uploads/2020/06/Jian-Bing-Chinese-Crepes-3-scaled.jpg",
+        title: "JIAN BING CHINESE CREPES-煎饼"
     },
 
 ]

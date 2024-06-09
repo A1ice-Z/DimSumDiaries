@@ -3,13 +3,13 @@ import foodCardType from "../types/FoodCardTypes";
 const FoodCards: foodCardType[] = [
     {
         id: 'jian-bing',
-        imageSrc: "https://redhousespice.com/wp-content/uploads/2020/06/Jian-Bing-Chinese-Crepes-4-360x360.jpg",
+        imageSrc: "https://redhousespice.com/wp-content/uploads/2020/06/Jian-Bing-Chinese-Crepes-3-scaled.jpg",
         altText: "Jian Bing",
         caption: "Jian Bing - 煎饼"
     },
     {
         id: 'xian-bing',
-        imageSrc: "https://redhousespice.com/wp-content/uploads/2024/02/chinese-meat-pies-xian-bing-500x500.jpg",
+        imageSrc: "https://school-of-wok.s3.eu-west-2.amazonaws.com/recipes/show_images/cfc2f23595537c60fd34af76b4b37861.jpg",
         altText: "Xian Bing",
         caption: "Xian Bing - 馅饼"
     },
