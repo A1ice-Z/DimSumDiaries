@@ -5,6 +5,7 @@ import Recipes from "../data/Recipes";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { DirectionType, IngredientType, IngredientsType, RecipeType } from "../types/RecipeTypes";
+import Calculator from "../components/Calculator/Calculator";
 
 
 const Recipe404 = () => {
@@ -20,6 +21,7 @@ const Recipe404 = () => {
 const Recipe = () => {
     const params = useParams();
     const [recipe, setRecipe] = useState<RecipeType>();
+    const [servings, setServings] = useState<number>(1);
 
     useEffect(() => {
         getRecipe()
@@ -33,6 +35,42 @@ const Recipe = () => {
             setRecipe(currentRecipe[0])
         }
     }
+
+    const manipulateMeasurement = (amount: number, measureType: string): string => {
+        let currentAmount = amount;
+        let currentMeasureType = measureType;
+
+        if (currentMeasureType == "g" && currentAmount >= 1000) {
+            currentAmount *= 0.001
+            currentMeasureType = "kg"
+        }
+
+        if (currentMeasureType == "ml" && currentAmount >= 100) {
+            currentAmount *= 0.01
+            currentMeasureType = "dl"
+        }
+
+        if (currentMeasureType == "dl" && currentAmount >= 10) {
+            currentAmount *= 0.1
+            currentMeasureType = "l"
+        }
+
+        if (measureType != "") {
+            currentAmount = Number(currentAmount.toPrecision(3))
+        }
+
+        return `${currentAmount} ${currentMeasureType} `
+    }
+
+    useEffect(() => {
+        const currentServings = sessionStorage.getItem("servings")
+        if (currentServings == "") {
+            sessionStorage.setItem("servings", JSON.stringify(servings));
+        }
+        else {
+            setServings(JSON.parse(currentServings || "1"))
+        }
+    }, [])
 
 
     return (
@@ -74,9 +112,7 @@ const Recipe = () => {
                     <div className="flex justify-center relative bottom-2">
                         <div className="bg-cream-light h-fit w-[80%] flex py-10 px-10 rounded-md pb-[60px]">
                             <div className="flex-none w-[30%]">
-                                <div className="bg-cream w-[100%] h-[10%]">
-
-                                </div>
+                                <Calculator servings={servings} setServings={setServings} />
                                 <div className="bg-gray-400 h-[2px] my-5"></div>
                                 <div className="h-full w-full flex items-start justify-center">
                                     <div className="text-center py-1">
@@ -85,7 +121,10 @@ const Recipe = () => {
                                             <>
                                                 <p className="text-[25px] pt-6 font-normal">{ingredients?.title.toUpperCase()}</p>
                                                 {ingredients?.content.map((ingredient: IngredientType) => (
-                                                    <p className="text-[20px] font-light leading-8">{ingredient?.amount} {ingredient?.type.measure} {ingredient?.title}  </p>
+                                                    <p className="text-[20px] font-light leading-8">
+                                                        {manipulateMeasurement(Number(ingredient?.amount) * servings, ingredient?.type.measure)}
+                                                        {ingredient?.title}
+                                                    </p>
                                                 ))}
                                             </>
                                         ))}

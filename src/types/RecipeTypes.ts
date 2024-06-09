@@ -19,7 +19,7 @@ export type IngredientType = {
 }
 
 type MeasureType = {
-    measure: "ml" | "l" | "dl" | "l" | "g" | "kg" | "tbs" | "ts" | ""
+    measure: "ml" | "l" | "dl" | "g" | "kg" | "tbs" | "ts" | ""
 }
 
 export type DirectionType = {
