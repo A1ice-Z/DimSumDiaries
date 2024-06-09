@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { FiPlusSquare, FiMinusSquare } from "react-icons/fi";
 
 interface CalculatorProps {
@@ -18,6 +19,10 @@ const Calculator = ({ servings, setServings }: CalculatorProps) => {
             setServings(servings - 1)
         }
     }
+
+    useEffect(() => {
+        sessionStorage.setItem("servings", JSON.stringify(servings));
+    }, [servings])
 
     return (
         <>

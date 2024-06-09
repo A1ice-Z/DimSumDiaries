@@ -63,7 +63,13 @@ const Recipe = () => {
     }
 
     useEffect(() => {
-
+        const currentServings = sessionStorage.getItem("servings")
+        if (currentServings == "") {
+            sessionStorage.setItem("servings", JSON.stringify(servings));
+        }
+        else {
+            setServings(JSON.parse(currentServings || "1"))
+        }
     }, [])
 
 
