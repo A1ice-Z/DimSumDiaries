@@ -20,43 +20,63 @@ const FoodCard = ({ id, imageSrc, altText, caption }: FoodCardProps) => {
 
         if (currentFavorites == "") {
             sessionStorage.setItem("favorites", JSON.stringify(favorites));
-        }
-        else {
+        } else {
             setFavorites(JSON.parse(currentFavorites || "[]"));
         }
 
-
         if (currentFavorites?.includes(id)) {
-            setFavorite(true)
+            setFavorite(true);
+        } else {
+            setFavorite(false);
         }
-        else {
-            setFavorite(false)
-        }
-    }, [])
+    }, []);
 
     const handleFavorites = () => {
         if (!isFavorite) {
             setFavorites([...favorites, id]);
-            sessionStorage.setItem("favorites", JSON.stringify([...favorites, id]))
-            setFavorite(true)
+            sessionStorage.setItem(
+                "favorites",
+                JSON.stringify([...favorites, id])
+            );
+            setFavorite(true);
         } else {
             setFavorites(favorites.filter((favorite) => favorite != id));
-            sessionStorage.setItem("favorites", JSON.stringify(favorites.filter((favorite) => favorite != id)))
-            setFavorite(false)
+            sessionStorage.setItem(
+                "favorites",
+                JSON.stringify(favorites.filter((favorite) => favorite != id))
+            );
+            setFavorite(false);
         }
-    }
+    };
 
     return (
-
-        <Link to={"/recipe/" + id}>
-            <div className="w-[150px] h-[150px] rounded-2xl overflow-hidden shadow-lg my-2"
-                onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                <img className="object-cover w-full h-[105px]" src={imageSrc} alt={altText} />
-                <div className="px-6 py-4 bg-cream text-center w-full h-[45px] flex items-center justify-center">
-                    <div className=" font-bold text-sm mb-2 mt-2">{isHovered ? <FiHeart size={22} color={isFavorite ? 'red' : 'black'} onClick={handleFavorites} className="cursor-pointer" /> : caption}</div>
+        <div
+            className="w-[150px] h-[150px] rounded-2xl overflow-hidden shadow-lg my-2"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            <Link to={"/recipe/" + id}>
+                <img
+                    className="object-cover w-full h-[105px]"
+                    src={imageSrc}
+                    alt={altText}
+                />
+            </Link>
+            <div className="px-6 py-4 bg-cream text-center w-full h-[45px] flex items-center justify-center">
+                <div className=" font-bold text-sm mb-2 mt-2">
+                    {isHovered ? (
+                        <FiHeart
+                            size={22}
+                            color={isFavorite ? "red" : "black"}
+                            onClick={handleFavorites}
+                            className="cursor-pointer"
+                        />
+                    ) : (
+                        caption
+                    )}
                 </div>
             </div>
-        </Link>
+        </div>
     );
 };
 
