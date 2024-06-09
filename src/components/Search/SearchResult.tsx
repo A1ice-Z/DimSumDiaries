@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 
 interface SearchResult {
+    id: string;
     imageSrc: string;
     recipeName: string;
 }
 
-const SearchResult = ({ imageSrc, recipeName }: SearchResult) => {
+const SearchResult = ({ id, imageSrc, recipeName }: SearchResult) => {
     return (
         <>
-            <Link to={`/recipe/${recipeName}`}>
+            <Link to={`/recipe/${id}`}>
                 <div className="w-[850px] h-[180px] rounded-md overflow-hidden group font-palatino">
                     <div className="flex">
                         <div className="flex justify-start h-full z-[50] px-2 py-2">
