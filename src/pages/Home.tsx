@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
-import { PiBowlFoodFill, } from "react-icons/pi";
+import { PiBowlFoodFill } from "react-icons/pi";
 import { FiHeart } from "react-icons/fi";
 import { LuCalendarHeart } from "react-icons/lu";
 import recipes from "../data/FoodCards";
@@ -10,7 +10,6 @@ import FoodCardMenu from "../components/FoodCards/FoodCardMenu";
 
 const Home = () => {
     const [favorites, setFavorites] = useState<String[]>([]);
-
 
     useEffect(() => {
         const currentFavorites = sessionStorage.getItem("favorites");
@@ -55,9 +54,12 @@ const Home = () => {
                         </div>
 
                         <div className="relative">
-                            <FoodCardMenu recipes={recipes.filter((recipe) =>
-                                favorites.includes(recipe.id)
-                            )} />
+                            <FoodCardMenu
+                                recipes={recipes.filter((recipe) =>
+                                    favorites.includes(recipe.id)
+                                )}
+                                id="favorites"
+                            />
                         </div>
                     </div>
                     <div className="py-[15px]">
@@ -76,7 +78,7 @@ const Home = () => {
                                 <PiBowlFoodFill className="h-full items-end" />
                             </div>
                         </div>
-                        <FoodCardMenu recipes={recipes} />
+                        <FoodCardMenu recipes={recipes} id="all" />
                     </div>
                 </div>
             </main>
