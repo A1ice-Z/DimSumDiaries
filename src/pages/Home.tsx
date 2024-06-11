@@ -32,7 +32,7 @@ const Home = () => {
             setLeftPosition(false)
         }
 
-        if (element.scrollWidth - element.scrollLeft === element.clientWidth) {
+        if (Math.abs(element.scrollWidth - (element.scrollLeft + element.clientWidth)) <= 1) {
             setRightPosition(true)
         }
         else {
