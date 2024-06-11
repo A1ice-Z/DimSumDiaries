@@ -6,6 +6,7 @@ import { LuCalendarHeart } from "react-icons/lu";
 import recipes from "../data/FoodCards";
 import FoodCardList from "../components/FoodCards/FoodCardList";
 import { useEffect, useState } from "react";
+import FoodCardMenu from "../components/FoodCards/FoodCardMenu";
 
 const Home = () => {
     const [favorites, setFavorites] = useState<String[]>([]);
@@ -23,7 +24,7 @@ const Home = () => {
     return (
         <>
             <Navbar />
-            <main className="h-fit w-full font-palatino">
+            <main className="h-fit w-full font-palatino overflow-hidden">
                 <div className="bg-cream h-[330px] flex items-center">
                     <div className="bg-cream-light py-[10px] w-full h-[270px]">
                         <div className="text-[40px] h-full w-full flex items-end justify-start px-[5%] gap-[52%]">
@@ -43,25 +44,26 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className="py-[20px] px-[5%] font-palatino text-[30px]">
-                    <div className="py-[15px]">
-                        <div className="flex gap-2">
+                <div className="py-[20px] font-palatino text-[30px]">
+                    <div className="py-[15px] ">
+                        <div className="flex gap-2 pl-[5%] pb-4">
                             <p>My Favorites</p>
                             <div>
                                 <FiHeart className="h-full items-end" />
                             </div>
                         </div>
 
-                        <div>
-                            <FoodCardList
+                        <div className="relative">
+                            <FoodCardMenu
                                 recipes={recipes.filter((recipe) =>
                                     favorites.includes(recipe.id)
                                 )}
+                                id="favorites"
                             />
                         </div>
                     </div>
                     <div className="py-[15px]">
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 pl-[5%] pb-4">
                             <p>This Weeks Recepies</p>
                             <div>
                                 <LuCalendarHeart className="h-full items-end" />
@@ -70,13 +72,13 @@ const Home = () => {
                         <div></div>
                     </div>
                     <div className="py-[15px]">
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 pl-[5%] pb-4">
                             <p>All recepies</p>
                             <div>
                                 <PiBowlFoodFill className="h-full items-end" />
                             </div>
                         </div>
-                        <FoodCardList recipes={recipes} />
+                        <FoodCardMenu recipes={recipes} id="all" />
                     </div>
                 </div>
             </main>

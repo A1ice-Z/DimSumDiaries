@@ -42,6 +42,24 @@ const FoodCards: foodCardType[] = [
         imageSrc: "https://redhousespice.com/wp-content/uploads/2024/03/scallion-oil-noodles-2-360x360.jpg",
         altText: "Cong You Ban Mian",
         caption: "Cong You Ban Mian - 葱油拌面"
+    },
+    {
+        id: 'cong-you-ban-mian',
+        imageSrc: "https://redhousespice.com/wp-content/uploads/2024/03/scallion-oil-noodles-2-360x360.jpg",
+        altText: "Cong You Ban Mian",
+        caption: "Cong You Ban Mian - 葱油拌面"
+    },
+    {
+        id: 'cong-you-ban-mian',
+        imageSrc: "https://redhousespice.com/wp-content/uploads/2024/03/scallion-oil-noodles-2-360x360.jpg",
+        altText: "Cong You Ban Mian",
+        caption: "Cong You Ban Mian - 葱油拌面"
+    },
+    {
+        id: 'cong-you-ban-mian',
+        imageSrc: "https://redhousespice.com/wp-content/uploads/2024/03/scallion-oil-noodles-2-360x360.jpg",
+        altText: "Cong You Ban Mian",
+        caption: "Cong You Ban Mian - 葱油拌面"
     }
 ]
 

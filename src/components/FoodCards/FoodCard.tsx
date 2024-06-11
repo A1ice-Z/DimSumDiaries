@@ -51,13 +51,13 @@ const FoodCard = ({ id, imageSrc, altText, caption }: FoodCardProps) => {
 
     return (
         <div
-            className="w-[150px] h-[150px] rounded-2xl overflow-hidden shadow-lg my-2"
+            className="w-[180px] h-[180px] rounded-2xl overflow-hidden hover:shadow-sm hover:-translate-y-1 transition-all my-2"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
             <Link to={"/recipe/" + id}>
                 <img
-                    className="object-cover w-full h-[105px]"
+                    className="object-cover w-full h-[135px]"
                     src={imageSrc}
                     alt={altText}
                 />
