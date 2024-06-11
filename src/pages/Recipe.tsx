@@ -164,7 +164,7 @@ const Recipe = () => {
                                                                         Number(
                                                                             ingredient?.amount
                                                                         ) *
-                                                                            servings,
+                                                                        servings,
                                                                         ingredient
                                                                             ?.type
                                                                             .measure
