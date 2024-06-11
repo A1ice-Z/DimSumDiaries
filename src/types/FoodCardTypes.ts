@@ -1,8 +1,8 @@
-type foodCardType = {
+type FoodCardType = {
     id: string,
     imageSrc: string,
     altText: string,
     caption: string
 }
 
-export default foodCardType;
+export default FoodCardType;
