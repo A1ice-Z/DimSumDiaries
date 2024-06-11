@@ -11,7 +11,8 @@ export default {
     extend: {
       colors: {
         'cream': '#FAEED1',
-        'cream-light': '#FDF7E4'
+        'cream-light': '#FDF7E4',
+        'orange': '#FFB200'
       },
     },
   },

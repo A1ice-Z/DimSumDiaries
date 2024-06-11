@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import Field from "../Field/Field";
 import SearchResult from "./SearchResult";
-import recipes from "../../data/recipes";
-import foodCardType from "../../types/types";
+import recipes from "../../data/FoodCards";
+import foodCardType from "../../types/FoodCardTypes";
 
 const SearchBox = () => {
     const [fieldValue, setFieldValue] = useState<string>("");
@@ -31,13 +31,14 @@ const SearchBox = () => {
                         focus
                     />
                     <div className="flex flex-row justify-center py-2">
-                        <div className="w-[94%] h-[2px] bg-gray-default "></div>
+                        <div className="w-[94%] h-[2px] bg-gray-200 "></div>
                     </div>
                     {fieldValue.length > 0 && (
                         <div className="flex flex-row justify-center">
                             <div className="flex flex-col gap-y-[40px] mt-2 max-h-[400px] overflow-y-scroll">
                                 {results.map((res: foodCardType) => (
                                     <SearchResult
+                                        id={res.id}
                                         key={res.altText}
                                         recipeName={res.caption}
                                         imageSrc={res.imageSrc}

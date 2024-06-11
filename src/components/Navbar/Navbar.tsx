@@ -24,7 +24,7 @@ const Navbar = () => {
         <>
             {visibleSearch && (
                 <div>
-                    <div className="absolute z-50 w-full h-[100vh] bg-black bg-opacity-50 overscroll-contain"></div>
+                    <div className="absolute z-50 w-full h-[100vh] bg-black bg-opacity-80 overscroll-contain"></div>
                     <div className="flex justify-center top-[20%] w-full absolute z-50">
                         <div ref={ref}>
                             <SearchBox />
