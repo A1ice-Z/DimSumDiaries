@@ -43,16 +43,16 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className="py-[20px] pl-[5%] font-palatino text-[30px]">
-                    <div className="py-[15px]">
-                        <div className="flex gap-2">
+                <div className="py-[20px] font-palatino text-[30px]">
+                    <div className="py-[15px] ">
+                        <div className="flex gap-2 pl-[5%]">
                             <p>My Favorites</p>
                             <div>
                                 <FiHeart className="h-full items-end" />
                             </div>
                         </div>
 
-                        <div>
+                        <div className="relative left-[5%]">
                             <FoodCardList
                                 recipes={recipes.filter((recipe) =>
                                     favorites.includes(recipe.id)
@@ -61,7 +61,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="py-[15px]">
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 pl-[5%]">
                             <p>This Weeks Recepies</p>
                             <div>
                                 <LuCalendarHeart className="h-full items-end" />
@@ -70,14 +70,14 @@ const Home = () => {
                         <div></div>
                     </div>
                     <div className="py-[15px]">
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 pl-[5%]">
                             <p>All recepies</p>
                             <div>
                                 <PiBowlFoodFill className="h-full items-end" />
                             </div>
                         </div>
                         <div className="relative h-fit w-full overflow-hidden overflow-x-scroll scrollbar-hide">
-                            <div className="inline-block ">
+                            <div className="inline-block relative left-[5%]">
                                 <FoodCardList recipes={recipes} />
                             </div>
                         </div>
