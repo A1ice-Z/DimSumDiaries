@@ -27,7 +27,7 @@ const Footer = () => {
                             </div>
                             <p>
                                 By{" "}
-                                <span className="font-bold">Alice Zheng</span>
+                                <span className="font-bold">Alice & Simon</span>
                             </p>
                         </div>
                     </div>

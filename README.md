@@ -1,30 +1,81 @@
-# React + TypeScript + Vite
+# DimSumDiaries
+This is a repository for the DimSumDiaries project that works as an online cookbook with my recipes, and as a hidden "koke" book for my fellow students at NTNU: What't the catch, find out how do get to the "koke" book (ongoing).
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div style="width:70%; margin: auto;">
+<img src="Images/homepage.png">
+</div>
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   [DimSumDiaries](#dimsumdiaries)
+    -   [Table of Contents](#table-of-contents)
+    -   [Description](#description)
+    -   [Installation \& Setup](#installation--setup)
+        -   [Installation](#installation)
+        -   [Backend](#backend)
+        -   [Frontend](#frontend)
 
-## Expanding the ESLint configuration
+## Description
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This application has a favorite fucntion, where one can favorite a recipe by clicking on the heart. The favorited recepies are then saved in their own list.
 
-- Configure the top-level `parserOptions` property like this:
+<div style="width:70%; margin: auto;">
+<img src="./Images/favorite.png">
+</div>
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+The application includes a search feature on the current dataset. You can search through different recipes.
+
+<div style="width:70%; margin: auto;">
+<img src="./Images/search.png">
+</div>
+
+When you click on either a recipe on the homepage or when searching you get to the recipe page.
+
+<div style="width:70%; margin: auto;">
+<img src="./Images/recipe.png">
+</div>
+
+When there are too many recipes on the homepage you can scroll through them!
+
+<div style="width:70%; margin: auto;">
+<img src="https://i.gyazo.com/e9a308abd9ac6a0eb7e56a92c8bcb666.gif">
+</div>
+
+## Installation & Setup
+
+### Installation
+
+To run the app locally follow instructions bellow (_you need to have [Node.js](https://nodejs.org/en/) v20.5+ installed_)
+
+
+To get started clone the repository:
+```
+git clone https://github.com/A1ice-Z/DimSumDiaries.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Backend
+
+//TODO
+
+
+### Frontend
+
+Be sure to go into the correct point in the file structure:
+
+```
+cd DimSumDiaries/
+```
+
+Install dependencies:
+
+```
+npm install
+```
+
+Run the app:
+
+```
+npm run dev
+```
+
+Then click on the link given and play around with the app 
