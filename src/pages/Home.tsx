@@ -43,7 +43,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className="py-[20px] px-[5%] font-palatino text-[30px]">
+                <div className="py-[20px] pl-[5%] font-palatino text-[30px]">
                     <div className="py-[15px]">
                         <div className="flex gap-2">
                             <p>My Favorites</p>
@@ -76,7 +76,12 @@ const Home = () => {
                                 <PiBowlFoodFill className="h-full items-end" />
                             </div>
                         </div>
-                        <FoodCardList recipes={recipes} />
+                        <div className="relative h-fit w-full overflow-hidden overflow-x-scroll scrollbar-hide">
+                            <div className="inline-block ">
+                                <FoodCardList recipes={recipes} />
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </main>
