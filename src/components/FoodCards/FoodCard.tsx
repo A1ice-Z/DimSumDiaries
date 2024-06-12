@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import foodCardType from "../../types/FoodCardTypes";
 import { FiHeart } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { favoritesState } from "../../atoms/favorites";
 
 interface FoodCardProps {
     id: string;
@@ -12,7 +14,7 @@ interface FoodCardProps {
 
 const FoodCard = ({ id, imageSrc, altText, caption }: FoodCardProps) => {
     const [isHovered, setIsHovered] = useState<boolean>(false);
-    const [favorites, setFavorites] = useState<string[]>([]);
+    const [favorites, setFavorites] = useRecoilState<string[]>(favoritesState);
     const [isFavorite, setFavorite] = useState<boolean>(false);
 
     useEffect(() => {

@@ -10,7 +10,7 @@ interface FoodCardMenuProps {
 
 const FoodCardMenu = ({ recipes, id }: FoodCardMenuProps) => {
     const [leftPosition, setLeftPosition] = useState<boolean>(true);
-    const [rightPosition, setRightPosition] = useState<boolean>(true);
+    const [rightPosition, setRightPosition] = useState<boolean>(false);
 
     const handleScroll = () => {
         const element = document.getElementById(id)!;
