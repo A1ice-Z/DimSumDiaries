@@ -4,12 +4,13 @@ import { PiBowlFoodFill } from "react-icons/pi";
 import { FiHeart } from "react-icons/fi";
 import { LuCalendarHeart } from "react-icons/lu";
 import recipes from "../data/FoodCards";
-import FoodCardList from "../components/FoodCards/FoodCardList";
 import { useEffect, useState } from "react";
 import FoodCardMenu from "../components/FoodCards/FoodCardMenu";
+import { favoritesState } from "../atoms/favorites";
+import { useRecoilState} from "recoil";
 
 const Home = () => {
-    const [favorites, setFavorites] = useState<String[]>([]);
+    const [favorites, setFavorites] = useRecoilState<string[]>(favoritesState);
 
     useEffect(() => {
         const currentFavorites = sessionStorage.getItem("favorites");
