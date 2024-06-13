@@ -63,7 +63,7 @@ git clone https://github.com/A1ice-Z/DimSumDiaries.git
 Be sure to go into the correct point in the file structure:
 
 ```
-cd DimSumDiaries/
+cd frontend/DimSumDiaries/
 ```
 
 Install dependencies:
